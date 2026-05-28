@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Square and Square Root Calculator</title>
+</head>
+<body>
+
+    <h2>Square and Square Root Calculator</h2>
+
+    <label>Enter a number:</label>
+    <input type="number" id="numberInput">
+
+    <br><br>
+
+    <button onclick="calculateSquare()">Square</button>
+    <button onclick="calculateSquareRoot()">Square Root</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function calculateSquare() {
+            let number = document.getElementById("numberInput").value;
+
+            if (number === "") {
+                document.getElementById("result").innerHTML = "Please enter a number";
+                return;
+            }
+
+            let square = number * number;
+            document.getElementById("result").innerHTML =
+                number + " to the power of 2 is " + square;
+        }
+
+        function calculateSquareRoot() {
+            let number = document.getElementById("numberInput").value;
+
+            if (number === "") {
+                document.getElementById("result").innerHTML = "Please enter a number";
+                return;
+            }
+
+            if (number < 0) {
+                document.getElementById("result").innerHTML =
+                    "Square root of negative number is not allowed";
+                return;
+            }
+
+            let squareRoot = Math.sqrt(number);
+            document.getElementById("result").innerHTML =
+                "Square root of " + number + " is " + squareRoot;
+        }
+    </script>
+
+</body>
+</html>
