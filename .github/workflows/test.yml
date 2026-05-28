@@ -27,7 +27,7 @@ jobs:
 
             - name: Start static HTML server
               run: |
-                cd squreit
+                cd squareit
                 python -m http.server 8000 & 
                 cd ..
                 pytest -v
